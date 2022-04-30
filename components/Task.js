@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 const Task = (props) => {
 
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
         flexDirections: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        marginBottoms: 20,
+        marginBottom: 20,
     },
     itemLeft: {
         flexDirection: 'row',
