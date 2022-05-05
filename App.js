@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
-import { StatusBar } from 'expo-status-bar';
-import { KeyboardAvoidingView, Platform, StyleSheet, Text, View, TextInput, TouchableOpacity, ScrollView } from 'react-native';
+import { KeyboardAvoidingView, Platform, StyleSheet, Text, View, TextInput, Keyboard, TouchableOpacity, ScrollView } from 'react-native';
 import Task from './components/Task'
 
 export default function App() {
@@ -33,8 +32,7 @@ export default function App() {
 
 
         <View style={styles.tasksWrapper}>
-          <Text style={styles.sectionTitle}> Today's :)tasks</Text>
-
+          <Text style={styles.sectionTitle}> Today's tasks </Text>
           <View style={styles.items}>
             {/* This is wehere the tasks will go */}
 
@@ -47,19 +45,19 @@ export default function App() {
                 )
               })
             }
-            {/*} <Task text={'task 1'} />
-        <Task text={'task 2'} /> */}
-
-
-          </View>
+            
+         </View>
         </View>
         </ScrollView>
+
+
         {/* write a task*/}
         <KeyboardAvoidingView
-          behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+          behavior={Platform.OS === "ios" ? "padding" : "height"}
           style={styles.writeTaskWrapper}
         >
-          <TextInput style={styles.input} placehoolder={'write a task'} value={task} onChangeText={task => setTask(text)} />
+
+          <TextInput style={styles.input} placeholder={'write a task'} value={task} onChangeText={text => setTask(text)} />
 
           <TouchableOpacity onPress={() => handleAddTask()} >
             <View style={styles.addWrapper}>
@@ -78,11 +76,12 @@ const styles = StyleSheet.create({
   },
   tasksWrapper: {
     paddingTop: 80,
-    paddingHorizontal: 20
+    paddingHorizontal: 20,
   },
   sectionTitle: {
-    fontize: 24,
-    fontweight: 'bold',
+    fontSize: 30,
+    fontWeight: 'bold',
+    color: 'blue',
   },
   items: {
     marginTop: 30,
@@ -104,7 +103,7 @@ const styles = StyleSheet.create({
     borderRadius: 60,
     borderColor: '#C0C0C0',
     borderWidth: 1,
-    width: 250,
+    width: 560,
 
   },
   addWrapper: {
